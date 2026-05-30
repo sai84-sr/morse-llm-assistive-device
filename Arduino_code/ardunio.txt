@@ -1,0 +1,148 @@
+#include "BluetoothSerial.h"
+
+BluetoothSerial SerialBT;
+
+// ================= PIN CONFIG =================
+const int morsePin   = 4;   // Single Morse sensor
+const int controlPin = 15;  // Confirm sensor
+
+bool morsePressed = false;
+bool controlPressed = false;
+
+unsigned long morseStartTime = 0;
+unsigned long controlStartTime = 0;
+
+String currentMorse = "";
+unsigned long lastInputTime = 0;
+
+// Duration threshold
+const unsigned long DASH_THRESHOLD = 500;
+
+// ================= MORSE TABLE =================
+String morseTable[][2] = {
+  {".-", "A"}, {"-...", "B"}, {"-.-.", "C"}, {"-..", "D"}, {".", "E"},
+  {"..-.", "F"}, {"--.", "G"}, {"....", "H"}, {"..", "I"}, {".---", "J"},
+  {"-.-", "K"}, {".-..", "L"}, {"--", "M"}, {"-.", "N"}, {"---", "O"},
+  {".--.", "P"}, {"--.-", "Q"}, {".-.", "R"}, {"...", "S"}, {"-", "T"},
+  {"..-", "U"}, {"...-", "V"}, {".--", "W"}, {"-..-", "X"}, {"-.--", "Y"},
+  {"--..", "Z"},
+
+  {"-----", "0"}, {".----", "1"}, {"..---", "2"}, {"...--", "3"},
+  {"....-", "4"}, {".....", "5"}, {"-....", "6"}, {"--...", "7"},
+  {"---..", "8"}, {"----.", "9"}
+};
+
+// ================= DECODE =================
+String decodeMorse(String morse) {
+  for (int i = 0; i < sizeof(morseTable)/sizeof(morseTable[0]); i++) {
+    if (morseTable[i][0] == morse)
+      return morseTable[i][1];
+  }
+  return "?";
+}
+
+// ================= SPECIAL COMMANDS =================
+void handleSpecialMorse(String morse) {
+
+  if (morse == "..") {
+    Serial.println("<SPACE>");
+    Serial.println("TOUCH_TEXT: ");
+    return;
+  }
+
+  if (morse == "--") {
+    Serial.println("<CLEAR>");
+    return;
+  }
+
+  String decoded = decodeMorse(morse);
+
+  Serial.println(decoded);
+  Serial.print("TOUCH_TEXT:");
+  Serial.println(decoded);
+}
+
+// ================= SETUP =================
+void setup() {
+
+  Serial.begin(115200);
+  SerialBT.begin("ESP32_Morse_2");
+
+  pinMode(morsePin, INPUT);
+  pinMode(controlPin, INPUT);
+
+  Serial.println("System Ready");
+}
+
+// ================= LOOP =================
+void loop() {
+
+  unsigned long now = millis();
+
+  int morseState = digitalRead(morsePin);
+  int controlState = digitalRead(controlPin);
+
+  // ---------- MORSE SENSOR ----------
+  if (morseState == HIGH && !morsePressed) {
+    morsePressed = true;
+    morseStartTime = now;
+  }
+
+  if (morseState == LOW && morsePressed) {
+
+    morsePressed = false;
+
+    unsigned long duration = now - morseStartTime;
+
+    if (duration < DASH_THRESHOLD) {
+      currentMorse += ".";
+      Serial.print(".");
+    }
+    else {
+      currentMorse += "-";
+      Serial.print("-");
+    }
+
+    lastInputTime = now;
+  }
+
+  // ---------- CONTROL SENSOR ----------
+  if (controlState == HIGH && !controlPressed) {
+    controlPressed = true;
+    controlStartTime = now;
+  }
+
+  if (controlState == LOW && controlPressed) {
+
+    controlPressed = false;
+
+    unsigned long duration = now - controlStartTime;
+
+    if (currentMorse != "") {
+      handleSpecialMorse(currentMorse);
+      currentMorse = "";
+    }
+
+    if (duration < 700) {
+      Serial.println("<CONFIRM_CORRECTION_ONLY>");
+    }
+    else {
+      Serial.println("<CONFIRM_FULL_RESPONSE>");
+    }
+  }
+
+  // ---------- AUTO DECODE ----------
+  if (currentMorse != "" &&
+      (now - lastInputTime > 2000)) {
+
+    handleSpecialMorse(currentMorse);
+    currentMorse = "";
+  }
+
+  // ---------- RECEIVE LLM ----------
+  if (Serial.available()) {
+
+    String reply = Serial.readStringUntil('\n');
+    SerialBT.println("GPT: " + reply);
+  }
+}

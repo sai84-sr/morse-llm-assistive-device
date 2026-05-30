@@ -1,0 +1,68 @@
+{
+  "serial": {
+    "port": "/dev/ttyUSB0",
+    "baudrate": 115200,
+    "timeout": 1.0,
+    "description": "USB Serial connection from ESP32 to Raspberry Pi. Use 'COM3' or similar on Windows, '/dev/ttyUSB0' on Linux"
+  },
+  "morse": {
+    "dot_threshold_ms": 500,
+    "letter_pause_ms": 1000,
+    "word_pause_ms": 2000,
+    "description": "Morse code timing thresholds. Dot < 500ms, Dash >= 500ms, Letter pause ~1s, Word pause ~2s"
+  },
+  "llm": {
+    "provider": "perplexity",
+    "model": "sonar-pro",
+    "api_key": "sk-xxxxxxxxxxxxxxxxxxxx",
+    "api_endpoint": "https://api.perplexity.ai/chat/completions",
+    "timeout_sec": 15,
+    "max_tokens": 512,
+    "temperature": 0.7,
+    "description": "Perplexity AI Sonar Pro LLM configuration. Get API key from https://www.perplexity.ai/settings/api"
+  },
+  "error_correction": {
+    "stage1_enabled": true,
+    "stage2_enabled": true,
+    "confidence_threshold": 0.85,
+    "spelling_check": true,
+    "grammar_check": false,
+    "description": "Two-stage error correction settings. Stage 1: rule-based. Stage 2: LLM-based."
+  },
+  "display": {
+    "type": "oled",
+    "i2c_address": "0x3C",
+    "rows": 4,
+    "cols": 20,
+    "brightness": 255,
+    "description": "OLED display configuration. Standard I2C address 0x3C for 128x32 OLED"
+  },
+  "bluetooth": {
+    "enabled": true,
+    "device_name": "MorseComm",
+    "pin_code": "1234",
+    "description": "Optional Bluetooth terminal for mobile device connection"
+  },
+  "logging": {
+    "level": "INFO",
+    "log_file": "morse_system.log",
+    "max_file_size_mb": 10,
+    "backup_count": 5,
+    "description": "Logging configuration for debugging and monitoring"
+  },
+  "performance": {
+    "measure_latency": true,
+    "measure_accuracy": true,
+    "save_metrics": true,
+    "metrics_file": "metrics.json",
+    "description": "Performance monitoring and metrics collection"
+  },
+  "security": {
+    "validate_input": true,
+    "sanitize_output": true,
+    "max_message_length": 1000,
+    "rate_limit_requests": true,
+    "requests_per_minute": 30,
+    "description": "Security and input validation settings"
+  }
+}
