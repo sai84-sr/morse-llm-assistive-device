@@ -145,15 +145,15 @@ The system operates through a sophisticated 4-stage pipeline:
 ### Step 2: ESP32 Arduino Code Deployment
 
 ```bash
-# Navigate to Arduino code directory
-cd code/Arduino_code/
-
-# Open in Arduino IDE
-arduino morse_esp32.ino
-
-# Select Board: ESP32 WROOM
-# Select Port: COM port (Windows) or /dev/ttyUSB* (Linux)
-# Click Upload
+# Open Arduino IDE
+# File > Open > Arduino_code/morse_esp32_decoder.ino
+#
+# Configure Arduino IDE:
+# Board: ESP32 WROOM
+# Port: COM port (Windows) or /dev/ttyUSB* (Linux)
+# Upload Speed: 921600
+#
+# Click Upload button
 ```
 
 ### Step 3: Raspberry Pi Python Setup
@@ -361,20 +361,13 @@ Springer_paper/
 ├── requirements.txt                    # Python dependencies
 ├── config.json                         # System configuration
 │
-├── code/                              # Source code
-│   ├── Arduino_code/
-│   │   ├── morse_esp32.ino            # ESP32 Morse decoder
-│   │   ├── sensor_calibration.ino     # TTP223 sensor setup
-│   │   └── README.md                  # Arduino-specific instructions
-│   │
-│   └── python_codes/
-│       ├── main.py                    # Main application entry point
-│       ├── latency_inc.py             # Latency measurement module
-│       ├── response_inc.py            # Response generation module
-│       ├── error_correction.py        # Two-stage error correction
-│       ├── llm_interface.py           # Sonar Pro API interface
-│       ├── config.py                  # Configuration loader
-│       └── README.md                  # Python-specific instructions
+├── Arduino_code/                       # ESP32 Firmware
+│   └── morse_esp32_decoder.ino        # Complete ESP32 Morse decoder firmware
+│                                      # (Pin config, decoding, Bluetooth, serial I/O)
+│
+├── python_codes/                      # Python Research Tools
+│   ├── Latency_inc.py                 # Latency measurement tool
+│   └── reponse_inc.py                 # Response generation tool
 │
 ├── images_blocks_tables/              # Documentation & visuals
 │   ├── circuit_diagram.png            # Hardware circuit schematic
