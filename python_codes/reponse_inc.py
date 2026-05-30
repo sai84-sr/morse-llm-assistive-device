@@ -1,26 +1,66 @@
+"""
+================================================================================
+Morse Code ESP32 LLM - Response Generation Tool
+================================================================================
+
+Description:
+    Generates intelligent LLM responses to user Morse code input using the
+    Perplexity AI Sonar Pro model (Llama 3.3-based). Integrates with ESP32
+    for end-to-end communication and error correction.
+
+Features:
+    - Real-time response generation from Morse input
+    - Medical/health reading analysis capability
+    - Bluetooth relay support for wireless feedback
+    - Streaming integration with ESP32 feedback loop
+
+Hardware:
+    - ESP32 WROOM with Morse sensors and USB serial
+    - Optional Bluetooth receiver for wireless feedback
+
+Output:
+    - Serial console: Real-time response display
+    - Bluetooth broadcast: Wireless feedback to mobile devices
+
+Author: Research Team
+Date: 2025
+Version: 2.0
+================================================================================
+"""
+
 import serial
 import requests
 import json
 
-# === CONFIG ===
+# ===================== CONFIGURATION =====================
 # Get your API key from: https://www.perplexity.ai/settings/api
 API_KEY = "your_perplexity_api_key_here"
 API_URL = "https://api.perplexity.ai/chat/completions"
 PORT = "COM5"       # Change to your ESP32 USB port
 BAUD_RATE = 115200
 
-# === CONNECT TO ESP32 USB ===
+# ===================== SERIAL CONNECTION =====================
 esp = serial.Serial(PORT, BAUD_RATE, timeout=1)
 print(f"[INFO] Connected to {PORT} at {BAUD_RATE} baud.")
 
-# === PERPLEXITY API CALL FUNCTION ===
+# ===================== PERPLEXITY API FUNCTION =====================
 def query_perplexity(user_text):
+    """
+    Query Perplexity AI Sonar Pro model for response generation.
+    Includes medical assistant capabilities for health reading analysis.
+    
+    Args:
+        user_text (str): User query from Morse code input
+        
+    Returns:
+        str: LLM-generated response or error message
+    """
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "sonar-pro",  # ✅ Valid model
+        "model": "sonar-pro",  # Llama 3.3-based model
         "messages": [
             {"role": "system", "content": "You are a helpful medical + general assistant. "
                                           "If user sends health readings (like heart rate, oxygen, temperature), "
@@ -39,7 +79,7 @@ def query_perplexity(user_text):
     else:
         return f"[ERROR] API returned {response.status_code}: {response.text}"
 
-# === MAIN LOOP ===
+# ===================== MAIN LOOP =====================
 while True:
     if esp.in_waiting > 0:
         decoded_text = esp.readline().decode().strip()
