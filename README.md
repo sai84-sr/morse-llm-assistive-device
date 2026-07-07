@@ -33,7 +33,7 @@ An advanced assistive communication system enabling individuals with speech disa
 
 | Author | Role | Affiliation |
 |--------|------|-------------|
-| **S. V. Ashok Sainaadh** | Lead Author & Primary Contributor | Amrita School of Artificial Intelligence |
+| **S. V. Ashok Sainnadh** | Lead Author & Primary Contributor | Amrita School of Artificial Intelligence |
 | **M. Neil Kumar** | Co-Author | Amrita School of Artificial Intelligence |
 | **B. Sai Sundhar Reddy** | Co-Author | Amrita School of Artificial Intelligence |
 | **Dr. Mithun Kumar Kar** | Supervisor & Corresponding Author | Amrita School of Artificial Intelligence |
@@ -211,7 +211,7 @@ O:  --- (3 dashes)       [Pause 1s+]
 
 #### Stage 1: Deterministic Rule-Based Correction
 - **Input:** Raw Morse-decoded text with uncertainty markers (?)
-- **Processing:** 
+- **Processing:**
   - Symbol-level uncertainty detection
   - Linguistic validation (spelling, grammar, character validity)
   - Deterministic rule application
@@ -307,12 +307,12 @@ Final Result: 998/1000 correct = 99.60% ✓
 
 ### Why Our System Excels
 
-✅ **Only system with LLM integration** - Enables intelligent error correction and response generation  
-✅ **Highest accuracy** - 99.60% vs. next best 97.92%  
-✅ **Practical latency** - 4.45-11.48 sec is acceptable for assistive communication  
-✅ **Tested with real users** - Paralyzed, ALS, and stroke patients  
-✅ **Two-stage framework** - Efficient routing based on confidence levels  
-✅ **Scalable architecture** - Easy to integrate additional models or correction strategies  
+✅ **Only system with LLM integration** - Enables intelligent error correction and response generation
+✅ **Highest accuracy** - 99.60% vs. next best 97.92%
+✅ **Practical latency** - 4.45-11.48 sec is acceptable for assistive communication
+✅ **Tested with real users** - Paralyzed, ALS, and stroke patients
+✅ **Two-stage framework** - Efficient routing based on confidence levels
+✅ **Scalable architecture** - Easy to integrate additional models or correction strategies
 
 ---
 
@@ -439,9 +439,9 @@ Create a `config.json` file in the root directory:
 If you use this system or reference this research, please cite:
 
 ```bibtex
-@article{sainaadh2025morse,
+@article{sainnadh2025morse,
   title={Morse Code Based ESP32 Communication with LLM Integration},
-  author={Sainaadh, S. V. Ashok and Kumar, M. Neil and Reddy, B. Sai Sundhar and Kar, Mithun Kumar},
+  author={Sainnadh, S. V. Ashok and Kumar, M. Neil and Reddy, B. Sai Sundhar and Kar, Mithun Kumar},
   journal={Discover Artificial Intelligence},
   publisher={Springer Nature},
   year={2025},
@@ -451,8 +451,8 @@ If you use this system or reference this research, please cite:
 
 **Plain Text Citation:**
 ```
-S. V. Ashok Sainaadh, M. Neil Kumar, B. Sai Sundhar Reddy, and Mithun Kumar Kar, 
-"Morse Code Based ESP32 Communication with LLM Integration," 
+S. V. Ashok Sainnadh, M. Neil Kumar, B. Sai Sundhar Reddy, and Mithun Kumar Kar,
+"Morse Code Based ESP32 Communication with LLM Integration,"
 Discover Artificial Intelligence, Springer Nature, Accepted 2025.
 ```
 
@@ -470,8 +470,8 @@ The code, hardware designs, and documentation are provided for research and educ
 
 For questions, issues, or collaborations:
 
-- **Lead Author:** S. V. Ashok Sainaadh  
-- **Supervisor:** Dr. Mithun Kumar Kar (Corresponding Author)  
+- **Lead Author:** S. V. Ashok Sainnadh
+- **Supervisor:** Dr. Mithun Kumar Kar (Corresponding Author)
 - **Institution:** Amrita School of Artificial Intelligence, Amrita Vishwa Vidyapeetham
 
 ### Getting Help
@@ -541,8 +541,8 @@ If you build upon this system or find it useful for your research:
 
 ---
 
-**Last Updated:** May 2025  
-**Project Status:** Active  
+**Last Updated:** May 2025
+**Project Status:** Active
 **Maintained By:** Amrita School of Artificial Intelligence
 
 ---
