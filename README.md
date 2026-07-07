@@ -1,4 +1,4 @@
-# Morse Code Based ESP32 Communication with LLM Integration
+# Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications
 
 ![Published](https://img.shields.io/badge/Published-Discover%20Artificial%20Intelligence%20%7C%20Springer%20Nature-blue?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Accepted%20In%20Press-green?style=flat-square)
@@ -19,7 +19,7 @@ An advanced assistive communication system enabling individuals with speech disa
 
 | Field | Details |
 |-------|---------|
-| **Paper Title** | Morse Code Based ESP32 Communication with LLM Integration |
+| **Paper Title** | Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications |
 | **Journal** | Discover Artificial Intelligence |
 | **Publisher** | Springer Nature |
 | **Status** | Accepted for Publication - In Press 2025 |
@@ -211,7 +211,7 @@ O:  --- (3 dashes)       [Pause 1s+]
 
 #### Stage 1: Deterministic Rule-Based Correction
 - **Input:** Raw Morse-decoded text with uncertainty markers (?)
-- **Processing:** 
+- **Processing:**
   - Symbol-level uncertainty detection
   - Linguistic validation (spelling, grammar, character validity)
   - Deterministic rule application
@@ -307,12 +307,12 @@ Final Result: 998/1000 correct = 99.60% ✓
 
 ### Why Our System Excels
 
-✅ **Only system with LLM integration** - Enables intelligent error correction and response generation  
-✅ **Highest accuracy** - 99.60% vs. next best 97.92%  
-✅ **Practical latency** - 4.45-11.48 sec is acceptable for assistive communication  
-✅ **Tested with real users** - Paralyzed, ALS, and stroke patients  
-✅ **Two-stage framework** - Efficient routing based on confidence levels  
-✅ **Scalable architecture** - Easy to integrate additional models or correction strategies  
+✅ **Only system with LLM integration** - Enables intelligent error correction and response generation
+✅ **Highest accuracy** - 99.60% vs. next best 97.92%
+✅ **Practical latency** - 4.45-11.48 sec is acceptable for assistive communication
+✅ **Tested with real users** - Paralyzed, ALS, and stroke patients
+✅ **Two-stage framework** - Efficient routing based on confidence levels
+✅ **Scalable architecture** - Easy to integrate additional models or correction strategies
 
 ---
 
@@ -440,7 +440,7 @@ If you use this system or reference this research, please cite:
 
 ```bibtex
 @article{sainaadh2025morse,
-  title={Morse Code Based ESP32 Communication with LLM Integration},
+  title={Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications},
   author={Sainaadh, S. V. Ashok and Kumar, M. Neil and Reddy, B. Sai Sundhar and Kar, Mithun Kumar},
   journal={Discover Artificial Intelligence},
   publisher={Springer Nature},
@@ -451,8 +451,8 @@ If you use this system or reference this research, please cite:
 
 **Plain Text Citation:**
 ```
-S. V. Ashok Sainaadh, M. Neil Kumar, B. Sai Sundhar Reddy, and Mithun Kumar Kar, 
-"Morse Code Based ESP32 Communication with LLM Integration," 
+S. V. Ashok Sainaadh, M. Neil Kumar, B. Sai Sundhar Reddy, and Mithun Kumar Kar,
+"Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications,"
 Discover Artificial Intelligence, Springer Nature, Accepted 2025.
 ```
 
@@ -470,8 +470,8 @@ The code, hardware designs, and documentation are provided for research and educ
 
 For questions, issues, or collaborations:
 
-- **Lead Author:** S. V. Ashok Sainaadh  
-- **Supervisor:** Dr. Mithun Kumar Kar (Corresponding Author)  
+- **Lead Author:** S. V. Ashok Sainaadh
+- **Supervisor:** Dr. Mithun Kumar Kar (Corresponding Author)
 - **Institution:** Amrita School of Artificial Intelligence, Amrita Vishwa Vidyapeetham
 
 ### Getting Help
@@ -541,10 +541,10 @@ If you build upon this system or find it useful for your research:
 
 ---
 
-**Last Updated:** May 2025  
-**Project Status:** Active  
+**Last Updated:** May 2025
+**Project Status:** Active
 **Maintained By:** Amrita School of Artificial Intelligence
 
 ---
 
-*This repository contains research code and documentation for the paper "Morse Code Based ESP32 Communication with LLM Integration" accepted for publication in Discover Artificial Intelligence (Springer Nature, 2025).*
+*This repository contains research code and documentation for the paper "Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications" accepted for publication in Discover Artificial Intelligence (Springer Nature, 2025).*
