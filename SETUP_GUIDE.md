@@ -58,7 +58,7 @@ Raspberry Pi Pin Configuration:
    - VCC → ESP32 3.3V
    - GND → ESP32 GND
    - OUT → ESP32 GPIO 13
-   
+
    Sensor 2 (DASH):
    - VCC → ESP32 3.3V
    - GND → ESP32 GND

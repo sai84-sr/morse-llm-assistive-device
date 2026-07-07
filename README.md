@@ -1,4 +1,4 @@
-# Morse Code Based ESP32 Communication with LLM Integration
+# Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications
 
 ![Published](https://img.shields.io/badge/Published-Discover%20Artificial%20Intelligence%20%7C%20Springer%20Nature-blue?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Accepted%20In%20Press-green?style=flat-square)
@@ -19,7 +19,7 @@ An advanced assistive communication system enabling individuals with speech disa
 
 | Field | Details |
 |-------|---------|
-| **Paper Title** | Morse Code Based ESP32 Communication with LLM Integration |
+| **Paper Title** | Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications |
 | **Journal** | Discover Artificial Intelligence |
 | **Publisher** | Springer Nature |
 | **Status** | Accepted for Publication - In Press 2025 |
@@ -33,7 +33,7 @@ An advanced assistive communication system enabling individuals with speech disa
 
 | Author | Role | Affiliation |
 |--------|------|-------------|
-| **S. V. Ashok Sainnadh** | Lead Author & Primary Contributor | Amrita School of Artificial Intelligence |
+| **S. V. Ashok Sainaadh** | Lead Author & Primary Contributor | Amrita School of Artificial Intelligence |
 | **M. Neil Kumar** | Co-Author | Amrita School of Artificial Intelligence |
 | **B. Sai Sundhar Reddy** | Co-Author | Amrita School of Artificial Intelligence |
 | **Dr. Mithun Kumar Kar** | Supervisor & Corresponding Author | Amrita School of Artificial Intelligence |
@@ -439,9 +439,9 @@ Create a `config.json` file in the root directory:
 If you use this system or reference this research, please cite:
 
 ```bibtex
-@article{sainnadh2025morse,
-  title={Morse Code Based ESP32 Communication with LLM Integration},
-  author={Sainnadh, S. V. Ashok and Kumar, M. Neil and Reddy, B. Sai Sundhar and Kar, Mithun Kumar},
+@article{sainaadh2025morse,
+  title={Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications},
+  author={Sainaadh, S. V. Ashok and Kumar, M. Neil and Reddy, B. Sai Sundhar and Kar, Mithun Kumar},
   journal={Discover Artificial Intelligence},
   publisher={Springer Nature},
   year={2025},
@@ -451,8 +451,8 @@ If you use this system or reference this research, please cite:
 
 **Plain Text Citation:**
 ```
-S. V. Ashok Sainnadh, M. Neil Kumar, B. Sai Sundhar Reddy, and Mithun Kumar Kar,
-"Morse Code Based ESP32 Communication with LLM Integration,"
+S. V. Ashok Sainaadh, M. Neil Kumar, B. Sai Sundhar Reddy, and Mithun Kumar Kar,
+"Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications,"
 Discover Artificial Intelligence, Springer Nature, Accepted 2025.
 ```
 
@@ -470,7 +470,7 @@ The code, hardware designs, and documentation are provided for research and educ
 
 For questions, issues, or collaborations:
 
-- **Lead Author:** S. V. Ashok Sainnadh
+- **Lead Author:** S. V. Ashok Sainaadh
 - **Supervisor:** Dr. Mithun Kumar Kar (Corresponding Author)
 - **Institution:** Amrita School of Artificial Intelligence, Amrita Vishwa Vidyapeetham
 
@@ -547,4 +547,4 @@ If you build upon this system or find it useful for your research:
 
 ---
 
-*This repository contains research code and documentation for the paper "Morse Code Based ESP32 Communication with LLM Integration" accepted for publication in Discover Artificial Intelligence (Springer Nature, 2025).*
+*This repository contains research code and documentation for the paper "Morse Code Based ESP32 Communication with LLM Integration for Healthcare Applications" accepted for publication in Discover Artificial Intelligence (Springer Nature, 2025).*
