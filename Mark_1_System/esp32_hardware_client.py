@@ -129,6 +129,8 @@ def main():
 
         # ── STEP 2: Open serial port without touching DTR/RTS ─────────────────
         esp32_serial = serial.Serial(ESP32_PORT, BAUD_RATE, timeout=1, dsrdtr=False)
+        esp32_serial.setDTR(False)
+        esp32_serial.setRTS(False)
         
         time.sleep(0.5)  # Let the connection stabilize
         esp32_serial.reset_input_buffer()  # Clear any leftover bytes
